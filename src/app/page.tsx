@@ -17,6 +17,7 @@ const homes: Property[] = [
     bedrooms: 2,
     bathrooms: 1,
     area: 100,
+    thumbnail: firstHome,
     images: ["image1.jpg", "image2.jpg", "image3.jpg"],
     amenities: ["Balcony", "Gym", "Swimming Pool"],
     available: true,
@@ -30,6 +31,7 @@ const homes: Property[] = [
     bedrooms: 3,
     bathrooms: 2,
     area: 150,
+    thumbnail: secondHome_,
     images: ["image4.jpg", "image5.jpg", "image6.jpg"],
     amenities: ["Garden", "Fireplace", "Garage"],
     available: true,
@@ -43,15 +45,27 @@ const homes: Property[] = [
     bedrooms: 4,
     bathrooms: 3,
     area: 300,
-    thumbnail: []
+    thumbnail: thirdHome,
+    images: ["image7.jpg", "image8.jpg", "image9.jpg"],
+    amenities: ["Terrace", "Jacuzzi", "Concierge Service"],
+    available: false,
+  },
+  {
+    id: 4,
+    title: "Luxury Penthouse with Panoramic Views",
+    description: "Stunning penthouse with breathtaking views",
+    price: 1000000,
+    location: "Downtown",
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 300,
+    thumbnail: fourthHome,
     images: ["image7.jpg", "image8.jpg", "image9.jpg"],
     amenities: ["Terrace", "Jacuzzi", "Concierge Service"],
     available: false,
   },
   // Add more properties as needed
 ];
-
-
 
 export default function Home() {
   return (
@@ -70,9 +84,15 @@ export default function Home() {
         </div>
       </header>
       <section className="grid w-full grid-cols-4 p-10 ">
-        <div className="flex p-4 h-[200px] w-[200px]">
-          <Image alt="home" src={homeHeader} className="flex object-cover" />
-        </div>
+        {homes.map((home) => (
+          <div className="flex p-4 h-[200px] w-[200px]" key={home.id}>
+            <Image
+              alt="home"
+              src={home.thumbnail}
+              className="flex object-cover"
+            />
+          </div>
+        ))}
       </section>
     </main>
   );
