@@ -2,6 +2,10 @@ import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import homeHeader from "/public/assets/home_header_background.png";
 import { Property } from "@/types";
+import firstHome from "/public/assets/properties/home_1.png";
+import secondHome_ from "/public/assets/properties/home_2.png";
+import thirdHome from "/public/assets/properties/home_3.png";
+import fourthHome from "/public/assets/properties/home_4.png";
 
 const homes: Property[] = [
   {
@@ -39,12 +43,15 @@ const homes: Property[] = [
     bedrooms: 4,
     bathrooms: 3,
     area: 300,
+    thumbnail: []
     images: ["image7.jpg", "image8.jpg", "image9.jpg"],
     amenities: ["Terrace", "Jacuzzi", "Concierge Service"],
     available: false,
   },
   // Add more properties as needed
 ];
+
+
 
 export default function Home() {
   return (
@@ -62,6 +69,11 @@ export default function Home() {
           </h2>
         </div>
       </header>
+      <section className="grid w-full grid-cols-4 p-10 ">
+        <div className="flex p-4 h-[200px] w-[200px]">
+          <Image alt="home" src={homeHeader} className="flex object-cover" />
+        </div>
+      </section>
     </main>
   );
 }
