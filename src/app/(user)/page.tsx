@@ -1,11 +1,9 @@
-import NavBar from "@/components/NavBar";
-import Image from "next/image";
-import homeHeader from "/public/assets/home_header_background.png";
 import { Property } from "@/types";
 import firstHome from "/public/assets/properties/home_1.png";
 import secondHome_ from "/public/assets/properties/home_2.png";
 import thirdHome from "/public/assets/properties/home_3.png";
 import fourthHome from "/public/assets/properties/home_4.png";
+import Image from "next/image";
 
 const homes: Property[] = [
   {
@@ -66,34 +64,18 @@ const homes: Property[] = [
   },
   // Add more properties as needed
 ];
-
 export default function Home() {
   return (
-    <main className="flex h-screen w-screen flex-col bg-white">
-      <header className="w-full flex-col  h-[400px] flex">
-        <NavBar />
-        <div className="h-[200px] flex w-full relative items-center justify-center">
+    <section className="grid w-full grid-cols-4 p-10 ">
+      {homes.map((home) => (
+        <div className="flex p-4 h-[200px] w-[200px]" key={home.id}>
           <Image
-            src={homeHeader}
-            className="h-full flex object-cover"
-            alt="Home header"
+            alt="home"
+            src={home.thumbnail}
+            className="flex object-cover"
           />
-          <h2 className="absolute flex text-xl">
-            Discover Your Dream Home with HavenHill Homes
-          </h2>
         </div>
-      </header>
-      <section className="grid w-full grid-cols-4 p-10 ">
-        {homes.map((home) => (
-          <div className="flex p-4 h-[200px] w-[200px]" key={home.id}>
-            <Image
-              alt="home"
-              src={home.thumbnail}
-              className="flex object-cover"
-            />
-          </div>
-        ))}
-      </section>
-    </main>
+      ))}
+    </section>
   );
 }
