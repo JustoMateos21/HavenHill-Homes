@@ -23,7 +23,7 @@ export default function UserLayout({
   }, [router.push]);
 
   return (
-    <main className="flex h-screen w-screen flex-col bg-white">
+    <main className="flex  min-h-screen w-screen flex-col bg-white">
       <header className="  flex w-full flex-col  h-[400px]">
         <NavBar />
         <div className="h-[200px]  flex w-full relative items-center justify-center">

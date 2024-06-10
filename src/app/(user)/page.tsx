@@ -66,7 +66,7 @@ const homes: Property[] = [
 ];
 export default function Home() {
   return (
-    <section className="grid  grid-cols-4 p-10 ">
+    <section className=" flex h-full  sm:flex-row flex-col w-full items-center justify-around sm:px-[20%] gap-8 pt-10 flex-wrap ">
       {homes.map((home) => (
         <div className="flex p-4 h-[200px] w-[200px]" key={home.id}>
           <Image
