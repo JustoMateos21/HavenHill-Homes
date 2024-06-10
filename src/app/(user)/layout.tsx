@@ -24,12 +24,12 @@ export default function UserLayout({
 
   return (
     <main className="flex h-screen w-screen flex-col bg-white">
-      <header className="w-full flex-col  h-[400px] flex">
+      <header className="  flex w-full flex-col  h-[400px]">
         <NavBar />
-        <div className="h-[200px] flex w-full relative items-center justify-center">
+        <div className="h-[200px]  flex w-full relative items-center justify-center">
           <Image
             src={isPropertiesScreen ? propertiesHeader : homeHeader}
-            className="h-full flex object-cover"
+            className="h-full w-full flex object-cover"
             alt="Home header"
           />
           <h2 className="absolute flex text-xl">
