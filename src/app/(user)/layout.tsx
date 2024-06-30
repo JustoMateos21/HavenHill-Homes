@@ -1,6 +1,6 @@
 "use client";
 
-import NavBar from "@/components/NavBar";
+import NavBar from "../../../components/NavBar";
 import Image, { StaticImageData } from "next/image";
 import { Property } from "@/types";
 import homeHeader from "/public/assets/header/home_header_background.png";
@@ -9,6 +9,7 @@ import propertiesHeader from "/public/assets/header/properties_header.png";
 import mapHeader from "/public/assets/header/map_header.png";
 
 import { usePathname, useRouter } from "next/navigation";
+
 export default function UserLayout({
   children,
 }: Readonly<{
@@ -37,7 +38,11 @@ export default function UserLayout({
             alt="Home header"
           />
           <h2 className="absolute flex text-xl">
-            Discover Your Dream Home with HavenHill Homes
+            {pathname.match("properties")
+              ? "Find  your dream house"
+              : pathname.match("map")
+              ? "You can search your house on the map!"
+              : "Discover Your Dream Home with HavenHill Homes"}
           </h2>
         </div>
       </header>
