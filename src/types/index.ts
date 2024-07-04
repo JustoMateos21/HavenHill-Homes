@@ -12,3 +12,9 @@ export type Property = {
   amenities: string[]; // Array of amenity names
   available: boolean;
 };
+
+
+export type LatLong = {
+  type?: string;
+  coordinates: number[];
+};
